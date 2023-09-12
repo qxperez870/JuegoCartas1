@@ -33,7 +33,6 @@ public class Jugador {
         int[] contadores = new int[NombreCarta.values().length];
         for (int i = 0; i < cartas.length; i++) {
             contadores[cartas[i].getNombre().ordinal()]++;
-            
         }
 
         int totalGrupos = 0;
@@ -64,5 +63,65 @@ public class Jugador {
                 }
             }
         }
-    }  
+    }
+
+    public String getGruposPorEscalera() {
+        String mensaje = "";
+        int[] contador = new int[]{1,1,1,1};
+        
+        int totalGrupos = 0;
+
+        for (int i = 0; i < cartas.length - 1; i++) {
+
+            int j = i + 1;
+            int valor_indice_i = cartas[i].getIndice();
+            int valor_indice_j = cartas[j].getIndice();
+
+            String pinta_indice_i = String.valueOf(cartas[i].getPinta());
+            String pinta_indice_j = String.valueOf(cartas[j].getPinta());
+            
+            if ((valor_indice_j==valor_indice_i+1)&&(pinta_indice_i.equals(pinta_indice_j))){
+
+                switch(pinta_indice_i){
+                    case "TREBOL":
+                        contador[0]++;
+                        break;
+                    case "PICA":
+                        contador[1]++;
+                        break; 
+                    case "CORAZON":
+                        contador[2]++;
+                        break;
+                    case "DIAMANTE":
+                        contador[3]++;
+                        break;
+                }
+            }
+            
+        }
+        
+        //for(int i=0; i<Pinta.values().length;i++){
+        //    JOptionPane.showMessageDialog(null,contador[i]);
+        //}
+        
+        for (int i = 0; i < contador.length; i++) {
+            if (contador[i] >= 2) {
+                totalGrupos++;
+            }
+        }
+        
+        if(totalGrupos>0){
+            mensaje = "Las escaleras encontradas fueron:\n";
+            
+            for(int i = 0; i < contador.length; i++){
+                if (contador[i] >= 2){
+                    
+                    mensaje += Grupo.values()[contador[i]] + " de " + Pinta.values()[i] + "\n";
+                    
+                }    
+            }
+        }
+        
+        return mensaje;
+    }
 }
