@@ -27,6 +27,7 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
         pnlJugador2 = new javax.swing.JPanel();
         btnOrdenar = new javax.swing.JButton();
         btnEscaleras = new javax.swing.JButton();
+        btnPuntaje = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -90,6 +91,8 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
             }
         });
 
+        btnPuntaje.setText("PUNTAJE");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -99,26 +102,36 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
                 .addComponent(tpJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 579, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(23, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(btnRepartir)
-                .addGap(28, 28, 28)
-                .addComponent(btnVerificar)
-                .addGap(18, 18, 18)
-                .addComponent(btnEscaleras, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnRepartir)
+                    .addComponent(btnOrdenar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnOrdenar)
-                .addGap(112, 112, 112))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnVerificar, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnEscaleras, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(82, 82, 82)
+                .addComponent(btnPuntaje)
+                .addGap(96, 96, 96))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRepartir)
-                    .addComponent(btnVerificar)
-                    .addComponent(btnOrdenar)
-                    .addComponent(btnEscaleras))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(14, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRepartir)
+                            .addComponent(btnVerificar))
+                        .addGap(14, 14, 14)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnOrdenar)
+                            .addComponent(btnEscaleras))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(btnPuntaje)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(tpJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -210,6 +223,7 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEscaleras;
     private javax.swing.JButton btnOrdenar;
+    private javax.swing.JButton btnPuntaje;
     private javax.swing.JButton btnRepartir;
     private javax.swing.JButton btnVerificar;
     private javax.swing.JPanel pnlJugador1;
