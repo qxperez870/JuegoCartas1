@@ -89,6 +89,7 @@ public class Jugador {
     }
 
     public String getGruposPorEscalera() {
+        boolean [] marcadas = {false,false,false,false,false,false,false,false,false,false};
         String mensaje = "No se encontraron escaleras";
         int[] contador = new int[]{1,1,1,1};
         int totalGrupos = 0;
@@ -104,21 +105,31 @@ public class Jugador {
                 switch(pinta_indice_i){
                     case "TREBOL":
                         contador[0]++;
+                        marcadas[i]= true;
+                        marcadas[j]= true;
                         break;
                     case "PICA":
                         contador[1]++;
+                        marcadas[i]= true;
+                        marcadas[j]= true;
                         break; 
                     case "CORAZON":
                         contador[2]++;
+                        marcadas[i]= true;
+                        marcadas[j]= true;
                         break;
                     case "DIAMANTE":
                         contador[3]++;
+                        marcadas[i]= true;
+                        marcadas[j]= true;
                         break;
                 }
             }  
         }
         
-        
+        for(int i= 0; i<marcadas.length; i++){
+            JOptionPane.showMessageDialog(null,marcadas[i]);
+        }
         
         for (int i = 0; i < contador.length; i++) {
             if (contador[i] >= 2) {
