@@ -92,6 +92,11 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
         });
 
         btnPuntaje.setText("PUNTAJE");
+        btnPuntaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPuntajeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,6 +189,26 @@ public class FrmJuegoCartas extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(null,mensaje);
     }//GEN-LAST:event_btnEscalerasActionPerformed
+
+    private void btnPuntajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntajeActionPerformed
+        int pestaña=tpJugadores.getSelectedIndex();
+        String mensaje="";
+        switch(pestaña){
+            case 0:
+                jugador1.ordenar();
+                jugador1.getGruposPorNombre();
+                jugador1.getGruposPorEscalera();
+                mensaje = jugador1.darPuntaje();
+                break;
+            case 1:
+                jugador2.ordenar();
+                jugador2.getGruposPorNombre();
+                jugador2.getGruposPorEscalera();
+                mensaje = jugador2.darPuntaje();
+                break;
+        }
+        JOptionPane.showMessageDialog(null,mensaje);
+    }//GEN-LAST:event_btnPuntajeActionPerformed
 
     /**
      * @param args the command line arguments
