@@ -1,11 +1,7 @@
 package juegocartas;
 
 import java.util.Random;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTabbedPane;
-
-
 
 public class Jugador {
 
@@ -15,7 +11,6 @@ public class Jugador {
     private Carta[] cartas;
     boolean[] marcadas = new boolean[TOTAL_CARTAS];
     
-
     public void repartir() {
         cartas = new Carta[TOTAL_CARTAS];
         for (int i = 0; i < cartas.length; i++) {
@@ -32,7 +27,6 @@ public class Jugador {
     }
 
     public String getGruposPorNombre() {
-        
         boolean [] marcadas = {false,false,false,false,false,false,false,false,false,false};
         String mensaje = "No hay grupos";
         int[] contadores = new int[NombreCarta.values().length];
@@ -51,11 +45,7 @@ public class Jugador {
                 contadores[cartas[i].getNombre().ordinal()]++;
             }
         }
-        //for(int i= 0; i<marcadas.length; i++){
-        //    JOptionPane.showMessageDialog(null,marcadas[i]);
-        //}
-        
-        
+
         int totalGrupos = 0;
         for (int i = 0; i < contadores.length; i++) {
             if (contadores[i] >= 2) {
@@ -67,8 +57,6 @@ public class Jugador {
 
             for (int i = 0; i < contadores.length; i++) {
                 if (contadores[i] >= 2) {
-                    
-                
                     mensaje += Grupo.values()[contadores[i]] + " de " + NombreCarta.values()[i] + "\n";
                 }
             }
@@ -125,13 +113,11 @@ public class Jugador {
                 }
             }  
         }
-        
         for (int i = 0; i < contador.length; i++) {
             if (contador[i] >= 2) {
                 totalGrupos++;
             }
         }
-        
         if(totalGrupos>0){
             mensaje = "Las escaleras encontradas fueron:\n";
             for(int i = 0; i < contador.length; i++){
@@ -140,7 +126,6 @@ public class Jugador {
                 }    
             }
         }
-        
         return mensaje;
     }
     
@@ -216,5 +201,3 @@ public class Jugador {
         return puntajes;
     } 
 }
-
-    
