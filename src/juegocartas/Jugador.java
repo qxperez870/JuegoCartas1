@@ -202,32 +202,19 @@ public class Jugador {
                 
                 if(marcadas[i]==false){
                     int ind = cartas[i].getNombre().ordinal()+1;
-                    JOptionPane.showMessageDialog(null,ind);
                     if(ind==1||ind>10){
                         puntaje +=10;
-                        JOptionPane.showMessageDialog(null,"vale 10");
                     }
                     else if(ind>1 && ind<11){
                         puntaje +=ind;
-                        JOptionPane.showMessageDialog(null,"vale lo normal");
                     }
                     
                 }
             }
         }
-            
-            
-            
-    
-        
         String puntajes = (String.valueOf(puntaje));
         return puntajes;
-    }
-        
-        
-        
-    
-    
+    } 
 }
 
     
